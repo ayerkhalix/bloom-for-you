@@ -1,28 +1,41 @@
 import React from "react"
-import type { Metadata } from 'next'
-import { Quicksand } from 'next/font/google'
+import type { Metadata, Viewport } from "next";
+import { Dancing_Script, Quicksand } from "next/font/google";
 
-import './globals.css'
+import "./globals.css";
 
-const quicksand = Quicksand({ 
-  subsets: ['latin'],
-  variable: '--font-quicksand'
-})
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing",
+});
 
 export const metadata: Metadata = {
-  title: 'Bloom for You',
-  description: 'A Valentine\'s surprise',
-  generator: 'v0.app',
-}
+  title: "Valentine's Garden",
+  description: "A special Valentine experience just for you",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#d8c4ee",
+  userScalable: false,
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable} font-sans antialiased`}>{children}</body>
+      <body
+        className={`${quicksand.variable} ${dancingScript.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }
