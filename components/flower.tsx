@@ -15,209 +15,296 @@ function RoseFlower() {
     <svg
       width="100%"
       height="100%"
-      viewBox="0 0 80 120"
+      viewBox="0 0 100 140"
       preserveAspectRatio="xMidYMax meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Stem */}
       <motion.path
-        d="M40 120 Q38 90 40 55"
-        stroke="#9b8ac0"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      />
-      {/* Left leaf */}
-      <motion.path
-        d="M38 85 Q25 75 20 82 Q25 90 38 85Z"
-        fill="#a999c9"
-        fillOpacity={0.8}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.4 }}
-      />
-      {/* Right leaf */}
-      <motion.path
-        d="M42 75 Q55 65 58 72 Q53 80 42 75Z"
-        fill="#a999c9"
-        fillOpacity={0.8}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.35, duration: 0.4 }}
-      />
-      {/* Outer petals - lavender */}
-      <motion.ellipse
-        cx="40" cy="42" rx="18" ry="16"
-        fill="#d0c0e8"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-      />
-      {/* Middle petals - soft purple */}
-      <motion.ellipse
-        cx="34" cy="38" rx="12" ry="14"
-        fill="#c0a8e0"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.55, duration: 0.45 }}
-      />
-      <motion.ellipse
-        cx="46" cy="38" rx="12" ry="14"
-        fill="#c0a8e0"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.55, duration: 0.45 }}
-      />
-      {/* Top petal - light lavender with pink hint */}
-      <motion.ellipse
-        cx="40" cy="32" rx="10" ry="13"
-        fill="#e8d8f0"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.45 }}
-      />
-      {/* Inner glow - subtle pink accent */}
-      <motion.ellipse
-        cx="40" cy="38" rx="6" ry="7"
-        fill="#d87aaa"
-        fillOpacity={0.7}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.7 }}
-        transition={{ delay: 0.65, duration: 0.4 }}
-      />
-      {/* Highlight */}
-      <motion.ellipse
-        cx="36" cy="34" rx="3" ry="4"
-        fill="#f8f0ff"
-        fillOpacity={0.4}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ delay: 0.7, duration: 0.3 }}
-      />
-    </svg>
-  )
-}
-
-function LilyFlower() {
-  return (
-    <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 80 130"
-      preserveAspectRatio="xMidYMax meet"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Main stem */}
-      <motion.path
-        d="M40 130 Q42 95 40 50"
-        stroke="#9b8ac0"
+        d="M50 140 Q48 100 50 70"
+        stroke="#8e7bb5"
         strokeWidth="3"
         strokeLinecap="round"
         fill="none"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
       />
-      {/* Left small stem */}
+
+      {/* Leaves */}
       <motion.path
-        d="M39 80 Q28 72 25 60"
-        stroke="#9b8ac0"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ delay: 0.2, duration: 0.35 }}
-      />
-      {/* Left leaf pair */}
-      <motion.path
-        d="M38 95 Q22 88 18 95 Q24 102 38 95Z"
-        fill="#a999c9"
-        fillOpacity={0.7}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.25, duration: 0.35 }}
+        d="M48 105 Q25 95 22 105 Q35 115 48 105Z"
+        fill="#7fb27f"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.4 }}
       />
       <motion.path
-        d="M42 88 Q56 80 60 87 Q54 94 42 88Z"
-        fill="#a999c9"
-        fillOpacity={0.7}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.35 }}
+        d="M52 95 Q75 85 78 95 Q65 105 52 95Z"
+        fill="#6aa86a"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.35, duration: 0.4 }}
       />
-      {/* Main flower petals - top - lavender */}
+
+      {/* Outer Petals */}
       <motion.path
-        d="M40 22 Q32 35 26 42 Q34 44 40 38 Q46 44 54 42 Q48 35 40 22Z"
-        fill="#e8d8f0"
+        d="M50 40 
+           Q25 55 35 75 
+           Q50 85 65 75 
+           Q75 55 50 40Z"
+        fill="#b784e5"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       />
-      {/* Left petal */}
+
+      {/* Mid Petals */}
       <motion.path
-        d="M26 42 Q18 34 22 26 Q30 30 32 38Z"
-        fill="#d0c0e8"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.55, duration: 0.45 }}
-      />
-      {/* Right petal */}
-      <motion.path
-        d="M54 42 Q62 34 58 26 Q50 30 48 38Z"
-        fill="#d0c0e8"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.55, duration: 0.45 }}
-      />
-      {/* Center - pink accent */}
-      <motion.circle
-        cx="40" cy="40" r="5.5"
-        fill="#d87aaa"
+        d="M50 45 
+           Q35 58 42 70 
+           Q50 75 58 70 
+           Q65 58 50 45Z"
+        fill="#c996f0"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.65, duration: 0.4 }}
+        transition={{ delay: 0.6, duration: 0.4 }}
       />
+
+      {/* Inner Petals */}
+      <motion.path
+        d="M50 48 
+           Q42 58 46 65 
+           Q50 68 54 65 
+           Q58 58 50 48Z"
+        fill="#e1b5ff"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.7, duration: 0.4 }}
+      />
+
+      {/* Spiral Center */}
+      <motion.path
+        d="M50 55 
+           Q48 52 52 50 
+           Q56 52 53 56 
+           Q49 60 46 56"
+        stroke="#a15ecb"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+      />
+
       {/* Highlight */}
-      <motion.circle
-        cx="38" cy="38" r="2.5"
-        fill="#f8f0ff"
-        fillOpacity={0.45}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.45 }}
-        transition={{ delay: 0.7, duration: 0.3 }}
-      />
-      {/* Side bud on left stem - lavender */}
-      <motion.ellipse
-        cx="25" cy="58" rx="6.5" ry="9"
-        fill="#d0c0e8"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.35 }}
-      />
-      <motion.ellipse
-        cx="24" cy="56" rx="3.5" ry="4.5"
-        fill="#e8d8f0"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.9 }}
-        transition={{ delay: 0.55, duration: 0.35 }}
+      <motion.path
+        d="M42 52 Q47 48 55 50"
+        stroke="#ffffff"
+        strokeOpacity={0.4}
+        strokeWidth="2"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ delay: 0.9, duration: 0.4 }}
       />
     </svg>
   )
 }
+function LilyFlower() {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 100 140"
+      preserveAspectRatio="xMidYMax meet"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Stem */}
+      <motion.path
+        d="M50 140 Q48 100 50 75"
+        stroke="#8e7bb5"
+        strokeWidth="3"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.6 }}
+      />
+
+      {/* Leaves */}
+      <motion.path
+        d="M48 115 Q25 105 22 115 Q35 125 48 115Z"
+        fill="#7fb27f"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+        style={{ transformOrigin: "48px 115px" }}
+      />
+      <motion.path
+        d="M52 110 Q75 100 78 110 Q65 120 52 110Z"
+        fill="#6aa86a"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 0.35, duration: 0.4 }}
+        style={{ transformOrigin: "52px 110px" }}
+      />
+
+      {/* Blooming Petals */}
+      <g transform="translate(0, 5)">
+        {/* Back Left Petal */}
+        <motion.path
+          d="M50 75 Q25 65 30 40 Q50 45 50 75Z"
+          fill="#9d79c3"
+          initial={{ rotate: -65, scaleY: 0.6 }}
+          animate={{ rotate: [-65, -10, -15], scaleY: [0.6, 1.1, 1] }}
+          transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
+          style={{ transformOrigin: "50px 75px" }}
+        />
+
+        {/* Back Right Petal */}
+        <motion.path
+          d="M50 75 Q75 65 70 40 Q50 45 50 75Z"
+          fill="#9d79c3"
+          initial={{ rotate: 65, scaleY: 0.6 }}
+          animate={{ rotate: [65, 10, 15], scaleY: [0.6, 1.1, 1] }}
+          transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
+          style={{ transformOrigin: "50px 75px" }}
+        />
+
+        {/* Top Center Petal */}
+        <motion.path
+          d="M50 75 Q35 45 50 20 Q65 45 50 75Z"
+          fill="#be95f2"
+          initial={{ scaleY: 0.2 }}
+          animate={{ scaleY: [0.2, 1.1, 1] }}
+          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+          style={{ transformOrigin: "50px 75px" }}
+        />
+
+        {/* Front Left Petal */}
+        <motion.path
+          d="M50 75 Q32 60 40 50 Q48 58 50 75Z"
+          fill="#d8b8ff"
+          initial={{ rotate: -45, scale: 0.6 }}
+          animate={{ rotate: [-45, -2, -5], scale: [0.6, 1.05, 1] }}
+          transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+          style={{ transformOrigin: "50px 75px" }}
+        />
+
+        {/* Front Right Petal */}
+        <motion.path
+          d="M50 75 Q68 60 60 50 Q52 58 50 75Z"
+          fill="#d8b8ff"
+          initial={{ rotate: 45, scale: 0.6 }}
+          animate={{ rotate: [45, 2, 5], scale: [0.6, 1.05, 1] }}
+          transition={{ delay: 0.65, duration: 0.8, ease: "easeOut" }}
+          style={{ transformOrigin: "50px 75px" }}
+        />
+{/* Animated Stamen */}
+<motion.g
+  initial="hidden"
+  animate="visible"
+  transition={{ delay: 1.1 }}
+  style={{ transformOrigin: "50px 70px" }}
+>
+  {/* Filaments draw upward */}
+  <motion.path
+    d="M50 70 L44 52"
+    stroke="#f5f0dc"
+    strokeWidth="2"
+    strokeLinecap="round"
+    variants={{
+      hidden: { pathLength: 0 },
+      visible: {
+        pathLength: 1,
+        transition: { duration: 0.6, ease: "easeOut" },
+      },
+    }}
+  />
+
+  <motion.path
+    d="M50 70 L50 48"
+    stroke="#f5f0dc"
+    strokeWidth="2"
+    strokeLinecap="round"
+    variants={{
+      hidden: { pathLength: 0 },
+      visible: {
+        pathLength: 1,
+        transition: { duration: 0.7, ease: "easeOut", delay: 0.05 },
+      },
+    }}
+  />
+
+  <motion.path
+    d="M50 70 L56 52"
+    stroke="#f5f0dc"
+    strokeWidth="2"
+    strokeLinecap="round"
+    variants={{
+      hidden: { pathLength: 0 },
+      visible: {
+        pathLength: 1,
+        transition: { duration: 0.6, ease: "easeOut", delay: 0.1 },
+      },
+    }}
+  />
+
+  {/* Buds bounce in */}
+  <motion.circle
+    cx="44"
+    cy="52"
+    r="2.5"
+    fill="#f8f4e6"
+    initial={{ scale: 0, y: 4 }}
+    animate={{ scale: [0, 1.3, 1], y: [4, -2, 0] }}
+    transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
+    style={{ transformOrigin: "44px 52px" }}
+  />
+
+  <motion.circle
+    cx="50"
+    cy="48"
+    r="2.5"
+    fill="#f8f4e6"
+    initial={{ scale: 0, y: 4 }}
+    animate={{ scale: [0, 1.3, 1], y: [4, -2, 0] }}
+    transition={{ delay: 1.65, duration: 0.5, ease: "easeOut" }}
+    style={{ transformOrigin: "50px 48px" }}
+  />
+
+  <motion.circle
+    cx="56"
+    cy="52"
+    r="2.5"
+    fill="#f8f4e6"
+    initial={{ scale: 0, y: 4 }}
+    animate={{ scale: [0, 1.3, 1], y: [4, -2, 0] }}
+    transition={{ delay: 1.7, duration: 0.5, ease: "easeOut" }}
+    style={{ transformOrigin: "56px 52px" }}
+  />
+</motion.g>
+
+      </g>
+    </svg>
+  )
+}
+
+
 
 export function Flower({ type, x, bottomVh, heightVh, id }: FlowerProps) {
-  const aspectRatio = type === "rose" ? 80 / 120 : 80 / 130
+  const aspectRatio =
+    type === "rose"
+      ? 100 / 140
+      : 100 / 180
+
   const widthVw = heightVh * aspectRatio
-  
-  // Generate unique sway properties for each flower
-  const swayAngle = 1 + (id % 4) * 0.5 // 1° to 3°
-  const swayDuration = 3 + (id % 5) // 3s to 8s
+
+  const swayAngle = 1 + (id % 4) * 0.5
+  const swayDuration = 3 + (id % 5)
   const swayDelay = (id % 7) * 0.2
 
   return (
@@ -231,22 +318,24 @@ export function Flower({ type, x, bottomVh, heightVh, id }: FlowerProps) {
         marginLeft: `-${widthVw / 2}vw`,
         transformOrigin: "bottom center",
       }}
-      initial={{ opacity: 0, scaleY: 0, y: 10 }}
-      animate={{
-        opacity: 1,
-        scaleY: 1,
-        y: 0,
-      }}
+      initial={{ opacity: 0, scale: 0.6, y: 10 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{
-        duration: 1.2,
+        duration: 0.8,
         ease: "easeOut",
       }}
     >
-      {/* Gentle wind sway with varied parameters */}
       <motion.div
         className="h-full w-full"
         animate={{
-          rotate: [0, -swayAngle, swayAngle * 1.2, -swayAngle * 0.8, swayAngle * 0.6, 0],
+          rotate: [
+            0,
+            -swayAngle,
+            swayAngle * 1.2,
+            -swayAngle * 0.8,
+            swayAngle * 0.6,
+            0,
+          ],
         }}
         transition={{
           duration: swayDuration,

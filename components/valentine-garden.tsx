@@ -33,14 +33,12 @@ export function ValentineGarden() {
   const roseCount = useMemo(() => flowers.filter(f => f.type === "rose").length, [flowers])
   const lilyCount = useMemo(() => flowers.filter(f => f.type === "lily").length, [flowers])
 
-  function generateHeightVh(index: number, total: number): number {
-    // Generate organic heights between 65% and 92%
-    // Slight bias toward taller flowers in center
+  function generateHeightVh(index: number, total: number, type: "rose" | "lily"): number {
     const centerRatio = Math.abs((index - (total - 1) / 2) / total) * 2
-    const heightRange = 27 // 92 - 65
-    const centerBonus = (1 - centerRatio) * 10 // Up to 10% taller in center
-    const baseHeight = 65 + Math.random() * heightRange
-    return Math.min(92, Math.max(65, baseHeight + centerBonus))
+    const base = type === "lily" ? 55 : 65
+    const range = type === "lily" ? 18 : 27
+    const centerBonus = (1 - centerRatio) * 8
+    return base + Math.random() * range + centerBonus
   }
 
   function findSafeX(desiredX: number, existingFlowers: FlowerData[]): number {
@@ -89,18 +87,21 @@ export function ValentineGarden() {
     return Math.max(4, Math.min(96, bestGapCenter))
   }
 
-  const handleTap = useCallback(
-    (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-      if (counterRef.current >= MAX_FLOWERS) return
-      if (showEnvelope && !letterClosed) return
-      if (showFinalMessage) return // Prevent taps during final message
+    const handleTap = useCallback(
+      (e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) => {
+        if (counterRef.current >= MAX_FLOWERS) return
+        if (showEnvelope && !letterClosed) return
+        if (showFinalMessage) return
 
-      let clientX: number
-      if ("touches" in e) {
-        clientX = e.touches[0].clientX
-      } else {
-        clientX = e.clientX
-      }
+        let clientX: number
+        if ("touches" in e) {
+          clientX = e.touches[0].clientX
+        } else {
+          clientX = e.clientX
+        }
+
+
+  
 
       const screenWidth = window.innerWidth
       const baseX = (clientX / screenWidth) * 100
@@ -123,7 +124,7 @@ export function ValentineGarden() {
         type,
         x: safeX,
         bottomVh: 0, // Always grow from bottom
-        heightVh: generateHeightVh(counterRef.current, MAX_FLOWERS),
+        heightVh: generateHeightVh(counterRef.current, MAX_FLOWERS, type),
       }
 
       counterRef.current += 1
