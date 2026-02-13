@@ -103,7 +103,9 @@ export function ValentineGarden() {
 
   
 
-      const screenWidth = window.innerWidth
+      const screenWidth =
+      typeof window !== "undefined" ? window.innerWidth : 1
+
       const baseX = (clientX / screenWidth) * 100
       const desiredX = Math.max(4, Math.min(96, baseX + (Math.random() - 0.5) * 12))
 
