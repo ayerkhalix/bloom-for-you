@@ -104,7 +104,6 @@ export function Envelope({ onClose }: EnvelopeProps) {
 
             <p className="font-sans text-base leading-relaxed text-[#5a3a6a] mb-4">
               This little garden is just a preview,
-              abangan mo na ung delivery hehe 💐
             </p>
 
             <p className="font-sans text-base leading-relaxed text-[#5a3a6a] mb-6">
@@ -117,7 +116,7 @@ export function Envelope({ onClose }: EnvelopeProps) {
               Always yours,
             </p>
             <p className="font-serif text-lg text-[#8b5ea0]">
-              Ayer
+              Name
             </p>
 
                 <div className="flex justify-center mt-2">

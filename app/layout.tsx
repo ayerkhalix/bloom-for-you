@@ -15,7 +15,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Rachel's Valentine Garden",
+  title: "Your Valentine Garden",
   description: "A special Valentine experience just for you",
   icons: {
     icon: "/icon-v2.png",
